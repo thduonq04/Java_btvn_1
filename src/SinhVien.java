@@ -96,13 +96,24 @@ public class SinhVien {
 		if(tinhDiemTB()>=8.5) return "A";
 		if(tinhDiemTB()>=7 && tinhDiemTB()<8.5) return "B";
 		if(tinhDiemTB()>=5.5 && tinhDiemTB()<7) return "C";
-		if(tinhDiemTB()>=4 && tinhDiemTB()<5.5) return "D";
+		if(tinhDiemTB()>=4 && tinhDiemTB()<5.5) return "<D";
 		return "F";
 	}
 	public void hienThi() {
-		System.out.println("Ho va ten: "+firstName+lastName+" | Ngay sinh: "+ngaySinh+" | Dia chi: "+address+" | Ten Lop: "+tenLop.getTenLop()+" | Diem Trung Binh :"+ tinhDiemTB()+" | Rank: "+getRank() );
+		//System.out.println("Ho va ten: "+firstName+lastName+" | Ngay sinh: "+ngaySinh+" | Dia chi: "+address+" | Ten Lop: "+tenLop.getTenLop()+" | Diem Trung Binh :"+ tinhDiemTB()+" | Rank: "+getRank() );
+		System.out.printf("| %-10s | %-10s | %-10s | %-10s | %-10.2f | %-10.2f | %-10.2f | %-10.2f | %-10.2f | %-10.2f | %-4s |\n",
+                this.getFirstName(),
+                this.getLastName(),
+                this.getNgaySinh(),
+                this.getAddress(),
+                this.getDiemLapTrinhHuongDoiTuong(),
+                this.getDiemQuanLiDuAn(),
+                this.getDiemHocMay(),
+                this.getDiemCSDL(),
+                this.getDiemLapTrinhUngDungChoTBDD(),
+                this.tinhDiemTB(),
+                this.getRank());
 	}
-	
 	
 	}
 

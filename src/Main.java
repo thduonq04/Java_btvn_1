@@ -17,7 +17,7 @@ public class Main {
 		lop2.addSV(new SinhVien("Nguyen", "Thi C", LocalDate.of(2004, 4, 30), "Ninh Binh", lop2, 4.0, 5.0, 4.5, 7.0, 6.0));
 		lop2.addSV(new SinhVien("Nguyen", "Thi D", LocalDate.of(2004, 6, 1), "Ha Noi", lop2, 9.5, 8.6, 7.9, 10.0, 6.0));
 		
-		System.out.println("Danh sach lop: ");
+		System.out.println("Danh sach lop: \n");
 		for(Lop lop : danhSachLop) {
 			System.out.println(lop.getMaLop()+": "+lop.getTenLop());
 		}
@@ -25,11 +25,16 @@ public class Main {
 		System.out.println("Nhap vao ma lop can xem danh sach: ");
 		String MaLopNhap = sc.nextLine();
 		
+		boolean timKiem = false;
 		for(Lop lop:danhSachLop) {
 			if(lop.getMaLop().equals(MaLopNhap)) {
 				lop.danhSachSV();
 				lop.demRank();
+				timKiem = true;
 			}
+		}
+		if(!timKiem) {
+			System.out.println("Khong tim thay lop!");
 		}
 		
 		
